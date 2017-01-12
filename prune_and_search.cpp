@@ -1,12 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int cnt=0;
-
-
-    
-
 void prune(int *data, int input, int total){
 	int is_divisible = 0;
 	
@@ -46,10 +40,10 @@ void prune(int *data, int input, int total){
 	else{
 		number = total / 5 + 1;
 	}
-	int data2[number][5] = {-1};
+	int data2[600][5] = {-1};
 	for(int i=0;i<number;i++){
 		for(int j=0;j<5;j++){
-			if(count<cnt){
+			if(count<total){
 				data2[i][j] = data[count];
 				count++;
 			}
@@ -135,11 +129,11 @@ void prune(int *data, int input, int total){
 	int num_s1 = median*3 + 2;
 	int num_s2 = 1;
 	int num_s3 = ( (number - 1) - median ) * 3 + 2;
-	int data_s1[3000];
+	int data_s1[3000] = {-1};
 	int count_s1=0;
-	int data_s2[3000];
+	int data_s2[3000] = {-1};
 	int count_s2=0;
-	int data_s3[3000];
+	int data_s3[3000] = {-1};
 	int count_s3=0;
 	
 	for(int i=0;i<number;i++){
@@ -203,7 +197,7 @@ int main(){
         system("PAUSE");
         return 0;
 	}
-	
+	int cnt=0;
 	while(fscanf(datain,"%d",&data[cnt])!=EOF){
 		cnt++;
 	}
