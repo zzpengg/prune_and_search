@@ -15,13 +15,16 @@ void prune(int *data, int input, int total){
 					min = data[i];
 				}
 			}
-			count_temp++;
+			printf("min=%d\n",min);
+			count_temp += 1;
 			if(count_temp==input){
 				break;
 			}
 			for(int i=0;i<total;i++){
 				if(min==data[i]){
 					data[i] = 9999999;
+					printf("i==%d\n",i);
+					break;
 				}
 			}
 //			for(int i=0;i<total;i++){
@@ -165,6 +168,9 @@ void prune(int *data, int input, int total){
 	if( count_s1 >= input ){
 		printf("\ncase1\n");
 		printf("count_s1=%d\n", count_s1);
+		for(int i=0;i<count_s1;i++){
+			printf("%d ",data_s1[i]);
+		}
 		prune(data_s1,input,count_s1);
 	}else if( count_s1 + count_s2 >= input ){
 		printf("\ncase2\n");
